@@ -6,7 +6,7 @@ export default function Footer({ theme }) {
 				<div class="flex gap-6">
 					<a href="https://github.com/alejandrolaguna20" class={`text-sm ${theme.text} ${theme.hover}`}>GitHub</a>
 					<a href="https://www.linkedin.com/in/alejandro-laguna-939687278/" class={`text-sm ${theme.text} ${theme.hover}`}>LinkedIn</a>
-					<a href="/resume_eng.pdf" download="cv_english_alejandro_laguna.pdf" class={`text-sm ${theme.text} ${theme.hover}`}>CV</a>
+					<a href="/resume_eng.pdf" download="cv_english_alejandro_laguna.pdf" target="_blank" rel="noopener" class={`text-sm ${theme.text} ${theme.hover}`}>CV</a>
 				</div>
 			</div>
 		</footer>
