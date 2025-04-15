@@ -14,7 +14,7 @@ const experience = [
 	},
 	{
 		company: "Niblu Group - Maribor, Slovenia",
-		role: "Backend Developer Intern",
+		role: "Full-Stack Developer Intern",
 		duration: "Summer 2023",
 		technologies: ["NextJS", "TailwindCSS", "TypeScript", "FastAPI", "AWS S3 Bucket"],
 		highlights: [
