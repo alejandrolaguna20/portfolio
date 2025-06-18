@@ -2,11 +2,18 @@ import ProjectCard from './ProjectCard';
 
 const projects = [
 	{
-		title: "Codertype",
-		description: "A monkeytype-like application designed specifically for developers",
-		tech: ["Laravel", "Livewire", "AlpineJS", "TailwindCSS", "PostgreSQL"],
+		title: "Morph",
+		description: "Lightweight URL shortening API built in Go with minimal dependencies. First ever project with this language, and I tried to focus on the stdlib and build any needed tools",
+		tech: ["Go"],
 		year: "2025",
-		link: "https://github.com/alejandrolaguna20/codertype"
+		link: "https://github.com/alejandrolaguna20/morph"
+	},
+	{
+		title: "Runes",
+		description: "A small, simple, smooth and beautiful flashcard TUI program featuring keyboard navigation and custom study sessions. Built with Go and the Bubbletea framework.",
+		tech: ["Go", "Bubbletea"],
+		year: "2025",
+		link: "https://github.com/alejandrolaguna20/nook.nvim"
 	},
 	{
 		title: "Nook.nvim",

@@ -18,6 +18,7 @@ const education = [
 		highlights: [
 			"First of the class",
 			"ERASMUS+ Scholarship",
+			"Student of the year"
 		]
 	}
 ];
