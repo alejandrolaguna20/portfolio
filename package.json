@@ -6,14 +6,17 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "start": "node ./dist/server/entry.mjs"
   },
   "dependencies": {
+    "@astrojs/node": "^9.3.3",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.8",
     "astro-icon": "^1.1.5",
     "lucide-astro": "^0.536.0",
     "lucide-react": "^0.536.0",
+    "serve": "^14.2.4",
     "tailwindcss": "^4.1.11"
   }
 }
