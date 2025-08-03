@@ -1,11 +1,57 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css"
+import Layout from "../layouts/Layout.astro"
+import NavigationCard from '../components/NavigationCard.astro';
+import { Fingerprint, PencilRuler, LibraryBig, NotepadText } from 'lucide-astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const navItems = [
+  {
+    href: "/about",
+    icon: Fingerprint,
+    heading: "About",
+    content: "Who am I, my academic and professional background, what drives this work."
+  },
+  {
+    href: "/workshop", 
+    icon: PencilRuler,
+    heading: "Workshop",
+    content: "From the theory to the implementation. What I build to understand."
+  },
+  {
+    href: "/library",
+    icon: LibraryBig, 
+    heading: "Library",
+    content: "Books and papers and resources I use to learn. What I read, and why it matters."
+  },
+  {
+    href: "/notes",
+    icon: NotepadText,
+    heading: "Notes", 
+    content: "My explorations into the fundamental nature of everything."
+  }
+];
 ---
-
 <Layout>
-	<Welcome />
+  <section class="max-w-4xl mb-20 sm:mb-28">
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-neutral-900">
+      A <span class="text-neutral-600"> notebook </span> for <br>working things out.
+    </h2>
+    <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed max-w-2xl">
+      Unpolished notes, working prototypes, honest questions. A space for building understanding from the ground up. Trying to understand the world by writing and building.
+    </p>
+  </section>
+
+  <section class="mb-20 sm:mb-28" aria-labelledby="navigation-heading">
+    <h2 id="navigation-heading" class="sr-only">Site navigation</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {navItems.map(item => (
+        <NavigationCard
+          href={item.href}
+          icon={item.icon}
+          heading={item.heading}
+          content={item.content}
+        />
+      ))}
+    </div>
+  </section>
 </Layout>

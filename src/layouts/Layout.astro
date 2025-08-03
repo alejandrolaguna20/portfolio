@@ -1,22 +1,42 @@
+---
+import "../styles/global.css"
+import { NotepadText, PencilRuler, LibraryBig, Fingerprint, House } from "lucide-astro";
+---
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alejandro Laguna</title>
+    <meta name="description" content="A computer science student's digital lab notebook documenting knowledge, building software, and understanding the world." />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body class="bg-neutral-50 text-neutral-900 min-h-screen antialiased">
+    <div class="fixed inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" aria-hidden="true"></div>
+	<header class="relative z-10 w-full px-6 sm:px-8 py-8 border-b border-neutral-200/80 bg-white backdrop-blur-md">
+	  <div class="max-w-6xl mx-auto flex items-center justify-between">
+		<div>
+		  <h1 class="text-2xl sm:text-3xl font-bold text-neutral-900">Alejandro Laguna</h1>
+		  <p class="text-sm text-neutral-600 mt-1 font-medium">My digital corner — science, code, thoughts.</p>
+		</div>
+		<a href="/" aria-label="Home" class="text-neutral-600 hover:text-neutral-900 transition-colors bg-neutral-100 p-2 rounded-lg">
+			<House class="w-7 h-7 text-neutral-500 group-hover:text-neutral-900 transition-colors duration-200" />
+		</a>
+	  </div>
+	</header>
+        <main class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-20 min-h-screen">
+          <slot />
+	</main>
+	<footer class="relative z-10 w-full px-6 sm:px-8 py-8 border-b backdrop-blur-md py-12 border-t border-neutral-200/80 bg-white">
+	  <div class="text-center">
+	    <p class="text-sm text-neutral-500">
+	      © 2025 Alejandro Laguna. Made with a lot of love.
+	    </p>
+	  </div>
+	</footer>
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
