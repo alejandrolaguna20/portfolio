@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css"
-import { NotepadText, PencilRuler, LibraryBig, Fingerprint, House } from "lucide-astro";
+import { House, Sun, Moon } from "lucide-astro";
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -15,28 +15,56 @@ import { NotepadText, PencilRuler, LibraryBig, Fingerprint, House } from "lucide
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
   </head>
-  <body class="bg-neutral-50 text-neutral-900 min-h-screen antialiased">
-    <div class="fixed inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" aria-hidden="true"></div>
-	<header class="relative z-10 w-full px-6 sm:px-8 py-8 border-b border-neutral-200/80 bg-white backdrop-blur-md">
-	  <div class="max-w-6xl mx-auto flex items-center justify-between">
-		<div>
-		  <h1 class="text-2xl sm:text-3xl font-bold text-neutral-900">Alejandro Laguna</h1>
-		  <p class="text-sm text-neutral-600 mt-1 font-medium">My digital corner — science, code, thoughts.</p>
-		</div>
-		<a href="/" aria-label="Home" class="text-neutral-600 hover:text-neutral-900 transition-colors bg-neutral-100 p-2 rounded-lg">
-			<House class="w-7 h-7 text-neutral-500 group-hover:text-neutral-900 transition-colors duration-200" />
-		</a>
-	  </div>
-	</header>
-        <main class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-20 min-h-screen">
-          <slot />
-	</main>
-	<footer class="relative z-10 w-full px-6 sm:px-8 py-8 border-b backdrop-blur-md py-12 border-t border-neutral-200/80 bg-white">
-	  <div class="text-center">
-	    <p class="text-sm text-neutral-500">
-	      © 2025 Alejandro Laguna. Made with a lot of love.
-	    </p>
-	  </div>
-	</footer>
+  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 min-h-screen antialiased transition-colors duration-200">
+    <div class="fixed inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" aria-hidden="true"></div>
+    <header class="relative z-10 w-full px-6 sm:px-8 py-8 border-b border-neutral-200/80 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-neutral-100">Alejandro Laguna</h1>
+          <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 font-medium">My digital corner — science, code, thoughts.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="/" aria-label="Home" class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 p-2 rounded-lg group">
+            <House class="w-6 h-6 text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-200" />
+          </a>
+          <button id="theme-toggle" aria-label="Toggle theme" class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 p-2 rounded-lg group">
+            <Sun id="sun-icon" class="w-6 h-6 text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-200 dark:hidden" />
+            <Moon id="moon-icon" class="w-6 h-6 text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-200 hidden dark:block" />
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-20 min-h-screen">
+      <slot />
+    </main>
+    <footer class="relative z-10 w-full px-6 sm:px-8 py-12 border-t border-neutral-200/80 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md">
+      <div class="text-center">
+        <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          © 2025 Alejandro Laguna. Made with a lot of love.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const getThemePreference = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const isDark = getThemePreference() === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+
+      document.getElementById('theme-toggle')?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        if (typeof localStorage !== 'undefined') {
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+      });
+    </script>
   </body>
 </html>

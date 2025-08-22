@@ -7,6 +7,8 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 body {
   font-family: var(--font-sans);
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
