@@ -1,0 +1,18 @@
+---
+import Layout from "./Layout.astro"
+
+export interface Props {
+  title: string,
+  description: string,
+  pubDate: Date,
+}
+
+const {title, description, pubDate} = Astro.props;
+---
+
+<Layout>
+  <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-neutral-900">{title}</h1>
+  <main class="text-lg text-neutral-600 leading-relaxed text-justify">
+  <slot />
+  </main>
+</Layout>

@@ -1,15 +1,46 @@
-# `create-preact`
+# Astro Starter Kit: Basics
 
-<h2 align="center">
-  <img height="256" width="256" src="./src/assets/preact.svg">
-</h2>
+```sh
+npm create astro@latest -- --template basics
+```
 
-<h3 align="center">Get started using Preact and Vite!</h3>
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## Getting Started
+## 🚀 Project Structure
 
--   `npm run dev` - Starts a dev server at http://localhost:5173/
+Inside of your Astro project, you'll see the following folders and files:
 
--   `npm run build` - Builds for production, emitting to `dist/`
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
--   `npm run preview` - Starts a server at http://localhost:4173/ to test production build locally
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

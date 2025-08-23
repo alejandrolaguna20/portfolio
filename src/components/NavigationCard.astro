@@ -1,0 +1,23 @@
+---
+export interface Props {
+  href: string;
+  icon: any;
+  heading: string;
+  content: string;
+}
+
+const { href, icon: Icon, heading, content } = Astro.props;
+---
+
+<a 
+  href={href} 
+  class="nav-card group block p-6 rounded-2xl bg-white dark:bg-neutral-800 border border-neutral-200/80 dark:border-neutral-700 shadow-sm hover:shadow-lg hover:border-neutral-300 dark:hover:border-neutral-600 focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:focus:ring-neutral-100 focus:ring-offset-2 dark:focus:ring-offset-neutral-800 focus:border-neutral-400 dark:focus:border-neutral-500 transition-colors duration-200"
+>
+  <div class="flex flex-col gap-4">
+    <Icon class="w-7 h-7 text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-neutral-100 transition-colors duration-200" />
+    <div>
+      <h3 class="text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-2">{heading}</h3>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">{content}</p>
+    </div>
+  </div>
+</a>

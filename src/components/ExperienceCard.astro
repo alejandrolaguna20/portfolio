@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  achievements: string[];
+  technologies: string;
+}
+
+const { title, company, period, location, achievements, technologies } = Astro.props;
+---
+
+<div class="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 mx-14">
+  <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">{title}</h3>
+  <p class="text-sm text-neutral-600 dark:text-neutral-400">{company}, {period}, {location}</p>
+  <ul class="list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 mt-2 space-y-1">
+    {achievements.map(achievement => (
+      <li>{achievement}</li>
+    ))}
+  </ul>
+  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2">
+    {technologies}
+  </p>
+</div>
