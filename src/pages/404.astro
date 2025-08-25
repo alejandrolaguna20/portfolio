@@ -1,0 +1,40 @@
+---
+import "../styles/global.css"
+import Layout from "../layouts/Layout.astro"
+import NavigationCard from '../components/NavigationCard.astro';
+import { ArrowLeft } from 'lucide-astro';
+
+const navItems = [
+  {
+    href: "/",
+    icon: ArrowLeft,
+    heading: "Home",
+    content: "Go back"
+  },
+];
+---
+<Layout>
+  <section class="max-w-4xl mb-20 sm:mb-28">
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-neutral-900 dark:text-neutral-100">
+      404. Seems like you tried to find something that doesn't exist yet.
+    </h2>
+    <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl">
+      I don't like to remove anything from here, but it can happen from time to time. Or maybe you mistyped something. In any case, my apologies. Feel free to go back to the very beginning if you want.
+
+    </p>
+  </section>
+
+  <section class="mb-20 sm:mb-28" aria-labelledby="navigation-heading">
+    <h2 id="navigation-heading" class="sr-only">Site navigation</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      {navItems.map(item => (
+        <NavigationCard
+          href={item.href}
+          icon={item.icon}
+          heading={item.heading}
+          content={item.content}
+        />
+      ))}
+    </div>
+  </section>
+</Layout>
