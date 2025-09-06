@@ -11,8 +11,7 @@ const {title, description, pubDate} = Astro.props;
 ---
 
 <Layout>
-  <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-neutral-900">{title}</h1>
-  <main class="text-lg text-neutral-600 leading-relaxed text-justify">
+  <main class="post text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed text-justify">
   <slot />
   </main>
 </Layout>

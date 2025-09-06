@@ -31,3 +31,248 @@ h1, h2, h3 {
 .nav-card:focus {
   transform: translateY(-1px);
 }
+
+/* Headings */
+.post h1 {
+  @apply text-3xl sm:text-4xl font-bold mb-6 mt-8 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2;
+}
+
+.post h2 {
+  @apply text-2xl sm:text-3xl font-bold mb-5 mt-8 text-neutral-900 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2;
+}
+
+.post h3 {
+  @apply text-xl sm:text-2xl font-serif  font-semibold mb-4 mt-6 text-neutral-800 dark:text-neutral-200;
+}
+
+.post h4 {
+  @apply text-lg sm:text-xl font-serif font-semibold mb-3 mt-5 text-neutral-800 dark:text-neutral-200;
+}
+
+.post h5 {
+  @apply text-base sm:text-lg font-medium mb-3 mt-4 text-neutral-700 dark:text-neutral-300;
+}
+
+.post h6 {
+  @apply text-sm sm:text-base font-serif font-medium mb-2 mt-4 text-neutral-700 dark:text-neutral-300 uppercase tracking-wide;
+}
+
+/* Paragraphs and Text */
+.post p {
+  @apply text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed mb-4 text-justify;
+}
+
+.post strong, .prose b {
+  @apply font-semibold text-neutral-800 dark:text-neutral-200;
+}
+
+.post em, .prose i {
+  @apply italic text-neutral-700 dark:text-neutral-300;
+}
+
+.post small {
+  @apply text-sm text-neutral-500 dark:text-neutral-400;
+}
+
+.post mark {
+  @apply bg-yellow-200 dark:bg-yellow-800 text-neutral-900 dark:text-neutral-100 px-1 rounded;
+}
+
+.post del, .prose s {
+  @apply line-through text-neutral-500 dark:text-neutral-400;
+}
+
+.post ins, .prose u {
+  @apply underline text-neutral-700 dark:text-neutral-300;
+}
+
+/* Links */
+.post a {
+  @apply text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline underline-offset-2 transition-colors duration-200;
+}
+
+.post a:visited {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+/* Lists */
+.post ul {
+  @apply list-disc list-inside mb-4 text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed space-y-2;
+}
+
+.post ol {
+  @apply list-decimal list-inside mb-4 text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed space-y-2;
+}
+
+.post li {
+  @apply mb-1;
+}
+
+.post li::marker {
+  @apply text-neutral-500 dark:text-neutral-400;
+}
+
+.post ul ul, .prose ol ol, .prose ul ol, .prose ol ul {
+  @apply mt-2 mb-2 ml-6;
+}
+
+/* Blockquotes */
+.post blockquote {
+  @apply border-l-4 border-neutral-300 dark:border-neutral-600 pl-4 py-2 mb-4 italic text-neutral-700 dark:text-neutral-300 bg-neutral-50 dark:bg-neutral-800 rounded-r-md px-3;
+}
+
+.post blockquote p {
+  @apply mb-2 last:mb-0;
+}
+
+.post blockquote cite {
+  @apply text-sm text-neutral-500 dark:text-neutral-400 not-italic block mt-2;
+}
+
+/* Code */
+.post code {
+  @apply bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-sm font-mono border border-neutral-200 dark:border-neutral-700;
+}
+
+.post pre {
+  @apply bg-neutral-900 dark:bg-neutral-950 text-neutral-100 dark:text-neutral-200 p-4 rounded-lg overflow-x-auto mb-4 border border-neutral-200 dark:border-neutral-700;
+}
+
+.post pre code {
+  @apply bg-transparent border-none p-0 text-inherit;
+}
+
+/* Tables */
+.post table {
+  @apply w-full border-collapse mb-4 text-sm sm:text-base;
+}
+
+.post thead {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+.post th {
+  @apply border border-neutral-300 dark:border-neutral-600 px-4 py-2 text-left font-semibold text-neutral-900 dark:text-neutral-100;
+}
+
+.post td {
+  @apply border border-neutral-300 dark:border-neutral-600 px-4 py-2 text-neutral-700 dark:text-neutral-300;
+}
+
+.post tbody tr:nth-child(even) {
+  @apply bg-neutral-50 dark:bg-neutral-800/50;
+}
+
+.post tbody tr:hover {
+  @apply bg-neutral-100 dark:bg-neutral-700/50 transition-colors duration-150;
+}
+
+/* Horizontal Rule */
+.post hr {
+  @apply border-0 h-px bg-neutral-300 dark:bg-neutral-600 my-8;
+}
+
+/* Images */
+.post img {
+  @apply max-w-full h-auto rounded-lg shadow-md mb-4 border border-neutral-200 dark:border-neutral-700;
+}
+
+.post figure {
+  @apply mb-4;
+}
+
+.post figcaption {
+  @apply text-sm text-neutral-500 dark:text-neutral-400 text-center mt-2 italic;
+}
+
+/* Keyboard Keys */
+.post kbd {
+  @apply bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 px-2 py-1 rounded text-sm font-mono border border-neutral-300 dark:border-neutral-600 shadow-sm;
+}
+
+/* Abbreviations */
+.post abbr {
+  @apply underline decoration-dotted cursor-help;
+}
+
+/* Definition Lists */
+.post dl {
+  @apply mb-4;
+}
+
+.post dt {
+  @apply font-semibold text-neutral-800 dark:text-neutral-200 mb-1;
+}
+
+.post dd {
+  @apply text-neutral-600 dark:text-neutral-300 ml-4 mb-2;
+}
+
+/* Details and Summary */
+.post details {
+  @apply border border-neutral-200 dark:border-neutral-700 rounded-lg p-4 mb-4 bg-neutral-50 dark:bg-neutral-800;
+}
+
+.post summary {
+  @apply font-semibold text-neutral-800 dark:text-neutral-200 cursor-pointer hover:text-neutral-600 dark:hover:text-neutral-400 transition-colors duration-200;
+}
+
+.post details[open] summary {
+  @apply mb-3 pb-2 border-b border-neutral-200 dark:border-neutral-700;
+}
+
+/* Address */
+.post address {
+  @apply not-italic text-neutral-600 dark:text-neutral-300 mb-4;
+}
+
+/* Subscript and Superscript */
+.post sub, .prose sup {
+  @apply text-xs;
+}
+
+/* Selection */
+.post ::selection {
+  @apply bg-blue-200 dark:bg-blue-800 text-neutral-900 dark:text-neutral-100;
+}
+
+/* Focus styles for accessibility */
+.post a:focus,
+.post button:focus,
+.post summary:focus {
+  @apply outline-2 outline-blue-500 dark:outline-blue-400 outline-offset-2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .post {
+    @apply text-base;
+  }
+  
+  .post p {
+    @apply text-base;
+  }
+  
+  .post ul, .prose ol {
+    @apply text-base;
+  }
+}
+
+/* Print styles */
+@media print {
+  .post {
+    @apply text-black;
+  }
+  
+  .post h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    @apply text-black border-black;
+  }
+  
+  .post a {
+    @apply text-black underline;
+  }
+  
+  .post code, .prose pre {
+    @apply bg-gray-100 text-black border-gray-300;
+  }
+}
