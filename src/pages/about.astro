@@ -3,7 +3,7 @@ import "../styles/global.css"
 import Layout from "../layouts/Layout.astro"
 import NavigationCard from "../components/NavigationCard.astro"
 import ExperienceCard from '../components/ExperienceCard.astro';
-import { PencilRuler, LibraryBig, NotepadText, GraduationCap, Wrench, Feather, Briefcase } from 'lucide-astro';
+import { PencilRuler, LibraryBig, NotepadText, GraduationCap, Wrench, Feather, Briefcase, Mail, Github, Linkedin, ExternalLink } from 'lucide-astro';
 
 const navItems = [
   {
@@ -68,6 +68,27 @@ const experiences = [
   }
 ];
 
+const contacts = [
+  {
+    label: "Email",
+    value: "alejandro.laguna@epitech.eu",
+    href: "mailto:alejandro.laguna@epitech.eu",
+    icon: Mail
+  },
+  {
+    label: "GitHub",
+    value: "@alejandrolaguna20",
+    href: "https://github.com/alejandrolaguna20",
+    icon: Github
+  },
+  {
+    label: "LinkedIn",
+    value: "Alejandro Laguna",
+    href: "https://linkedin.com/in/alejandro-laguna",
+    icon: Linkedin
+  }
+];
+
 ---
 
 <Layout>
@@ -75,6 +96,31 @@ const experiences = [
     <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-neutral-900 dark:text-neutral-100">About</h1>
     <p class="text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify">
       Guilty of having too many interests and being unable to focus on a couple of them and making notable progress. Currently a second-year computer science student at the <a class="underline" href="https://www.epitech.eu/"> European Institute of Technology</a>, and Software Engineer Intern at <a class="underline" href="https://migalabs.io/"> Migalabs </a></p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="flex items-center gap-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 mb-4">
+      <Mail class="w-6 h-6 text-neutral-500 dark:text-neutral-400" /> Get in Touch
+    </h2>
+    <div class="bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {contacts.map(contact => (
+          <a 
+            href={contact.href}
+            class="flex items-center gap-3 p-4 bg-white dark:bg-neutral-700 rounded-xl border border-neutral-200 dark:border-neutral-600 hover:border-neutral-300 dark:hover:border-neutral-500 transition-colors group"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <contact.icon class="w-5 h-5 text-neutral-500 dark:text-neutral-400 group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors" />
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium text-neutral-900 dark:text-neutral-100">{contact.label}</p>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400 truncate">{contact.value}</p>
+            </div>
+            <ExternalLink class="w-4 h-4 text-neutral-400 dark:text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </a>
+        ))}
+      </div>
+    </div>
   </section>
 
   <section class="mb-12 bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-700">
