@@ -5,6 +5,8 @@ import astroIcon from "astro-icon"
 import mdx from '@astrojs/mdx';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,7 +18,17 @@ export default defineConfig({
   base: "/",
   markdown: {
     remarkPlugins: [remarkMath],
-    rehypePlugins: [rehypeKatex],
+    rehypePlugins: [rehypeKatex, rehypeSlug,
+      [
+        rehypeAutolinkHeadings,
+        {
+          behavior: "wrap",
+          properties: {
+            class: "heading-anchor", // optional for styling
+          },
+        },
+      ],
+    ],
     shikiConfig: {
       theme: "vesper",
     }

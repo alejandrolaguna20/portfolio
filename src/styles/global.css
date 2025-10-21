@@ -276,3 +276,29 @@ h1, h2, h3 {
     @apply bg-gray-100 text-black border-gray-300;
   }
 }
+
+.heading-anchor {
+  position: relative;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.heading-anchor::after {
+  content: "#";
+  opacity: 0;
+  margin-left: 0.4em;
+  font-size: 0.9em;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.heading-anchor:hover::after {
+  opacity: 1;
+}
+
+.heading-anchor:focus,
+.heading-anchor:focus-visible,
+.heading-anchor:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
