@@ -3,7 +3,7 @@ import "../styles/global.css"
 import Layout from "../layouts/Layout.astro"
 import NavigationCard from "../components/NavigationCard.astro"
 import ExperienceCard from '../components/ExperienceCard.astro';
-import { PencilRuler, LibraryBig, NotepadText, GraduationCap, Wrench, Feather, Briefcase, Mail, Github, Linkedin, ExternalLink } from 'lucide-astro';
+import { PencilRuler, LibraryBig, ScrollText, GraduationCap, Wrench, Feather, Briefcase, Mail, Github, Linkedin, ExternalLink } from 'lucide-astro';
 
 const navItems = [
   {
@@ -19,10 +19,10 @@ const navItems = [
     content: "Books and papers and resources I use to learn. What I read, and why it matters."
   },
   {
-    href: "/notes",
-    icon: NotepadText,
-    heading: "Notes", 
-    content: "My explorations into the fundamental nature of everything."
+    href: "/log",
+    icon: ScrollText,
+    heading: "Log", 
+    content: "Progress notes across study, work, and self, and some reflections."
   }
 ];
 
