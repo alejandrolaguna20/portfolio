@@ -4,7 +4,7 @@ description: 'My thoughts on Epitech after a year, and my next steps.'
 pubDate: '2025-08-03'
 tags: ['education', 'compsci', 'university']
 heroImage: "../images/an-unconventional-university.png"
-private: true
+private: false
 ---
 
 # Epitech, An Unconventional University
@@ -13,7 +13,7 @@ It’s a strange thing to admit, but my first year at Epitech has been a weird k
 
 On the one hand, it’s been a massive success. I got in late 2023, started in the fall of 2024, and dived right into the project-first world I thought I wanted. And I am, genuinely, learning a *ton* about how to build software.
 
-But on the other hand, it’s felt like a complete mismatch. I'm discovering that when you strip away all the "boring" stuff—the math, the physics, the formal theory—you're left with an education that feels incomplete. It feels like I'm only getting half the story. And that missing half is, ironically, the part I'm starting to realize I really, really miss.
+But on the other hand, it’s felt like a complete mismatch. I'm discovering that when you strip away all the "boring" stuff, the math, the physics, the formal theory,you're left with an education that feels incomplete. It feels like I'm only getting half the story. And that missing half is, ironically, the part I'm starting to realize I really, really miss.
 
 ## The University
 
@@ -73,7 +73,7 @@ You also learn… let’s say “people skills.” You have to deal with differe
 
 This might not be important to everyone I’ve talked to, but the vibes are important as well. How you feel when you’re there, you know? The Barcelona campus is… tiny. And why shouldn’t it be? The promotion size ranges between 25 and 45 students a year, so that makes sense. It’s also modern because, well, tech school. But it feels more like a youth activity center where people go to play board games and foosball (I think that’s the English word for *futbolín*). It really reminds me of the one I have in my hometown. The colors of the walls, the kind of tables and chairs… it feels really “teenager”.
 
-Of course, this is because of movies and books and stuff, but I just don’t feel that “college vibe.” The people aren’t pulling all-nighters at the campus for an exam the next day. The work is still insane—we definitely pull all-nighters, just at home—but the campus itself is just like an office that’s open during the day.
+Of course, this is because of movies and books and stuff, but I just don’t feel that “college vibe.” The people aren’t pulling all-nighters at the campus for an exam the next day. The work is still insane, we definitely pull all-nighters, just at home, but the campus itself is just like an office that’s open during the day.
 
 Lately, I’ve found that I can access public university libraries, like the one at Universitat Pompeu Fabra (UPF). I especially love the Dipòsit de les Aigües building on their Ciutadella campus. It’s this incredible old building, a former water tower, with super high brick arches. From the moment I walk onto that campus until I leave, I finally get that university feeling I was missing.
 
