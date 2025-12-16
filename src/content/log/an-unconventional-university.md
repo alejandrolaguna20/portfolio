@@ -4,7 +4,7 @@ description: 'My thoughts on Epitech after a year, and my next steps.'
 pubDate: '2025-08-03'
 tags: ['education', 'compsci', 'university']
 heroImage: "../images/an-unconventional-university.png"
-private: false
+private: true
 ---
 
 # Epitech, An Unconventional University
