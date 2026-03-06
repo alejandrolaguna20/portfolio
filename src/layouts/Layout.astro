@@ -15,6 +15,21 @@ import { House, Sun, Moon } from "lucide-astro";
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+    <script is:inline>
+      const getThemePreference = () => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      const isDark = getThemePreference() === 'dark';
+      document.documentElement.classList.toggle('dark', isDark);
+
+      if (typeof localStorage !== 'undefined') {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      }
+    </script>
   </head>
   <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 min-h-screen antialiased transition-colors duration-200">
     <div class="fixed inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" aria-hidden="true"></div>
@@ -53,20 +68,6 @@ import { House, Sun, Moon } from "lucide-astro";
       </div>
     </footer>
     <script>
-      const getThemePreference = () => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
-        }
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      };
-
-      const isDark = getThemePreference() === 'dark';
-      document.documentElement.classList.toggle('dark', isDark);
-
-      if (typeof localStorage !== 'undefined') {
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      }
-
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
         const isDark = document.documentElement.classList.toggle('dark');
         if (typeof localStorage !== 'undefined') {
