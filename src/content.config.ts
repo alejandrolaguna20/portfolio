@@ -29,5 +29,19 @@ const log = defineCollection({
         }),
 });
 
+const library = defineCollection({
+    loader: glob({ base: './src/content/library', pattern: '**/*.{md,mdx}' }),
+    schema: ({ image }) =>
+        z.object({
+            title: z.string(),
+            description: z.string(),
+            pubDate: z.coerce.date(),
+            updatedDate: z.coerce.date().optional(),
+            heroImage: image().optional(),
+            tags: z.array(z.string()).optional(),
+            private: z.boolean().optional()
+        }),
+});
 
-export const collections = { workshop, log };
+
+export const collections = { workshop, log, library };

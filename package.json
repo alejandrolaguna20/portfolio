@@ -13,8 +13,8 @@
     "start": "node ./dist/server/entry.mjs"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/mdx": "^4.3.10",
+    "@tailwindcss/postcss": "^4.2.0",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.15.4",
     "astro-icon": "^1.1.5",

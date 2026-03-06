@@ -9,24 +9,30 @@ const navItems = [
     href: "/",
     icon: ArrowLeft,
     heading: "Home",
-    content: "Go back"
+    content: "Return to the main directory."
   },
 ];
 ---
 <Layout>
-  <section class="max-w-4xl mb-20 sm:mb-28">
-    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-neutral-900 dark:text-neutral-100">
-      404. Seems like you tried to find something that doesn't exist yet.
-    </h2>
-    <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-2xl">
-      I don't like to remove anything from here, but it can happen from time to time. Or maybe you mistyped something. In any case, my apologies. Feel free to go back to the very beginning if you want.
+  <section class="max-w-3xl mb-16 sm:mb-24">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-8 text-neutral-900 dark:text-neutral-100 font-serif tracking-tight">
+      Error <span class="text-neutral-500 dark:text-neutral-500 italic decoration-neutral-300 dark:decoration-neutral-700 underline underline-offset-8">404</span>
+    </h1>
+    
+    <p class="text-lg sm:text-xl text-neutral-800 dark:text-neutral-100 leading-snug text-justify font-serif font-bold">
+      The requested resource could not be located. This path may have been deprecated, moved, or never existed in the current implementation.
+    </p>
 
+    <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify font-serif mt-4 font-medium">
+      I strive for persistent URI reliability, but system migrations sometimes lead to broken links. If you believe this is a technical error, please report it. Otherwise, you may return to the entry point.
     </p>
   </section>
 
   <section class="mb-20 sm:mb-28" aria-labelledby="navigation-heading">
-    <h2 id="navigation-heading" class="sr-only">Site navigation</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <h2 id="navigation-heading" class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-10 font-serif underline decoration-neutral-300 dark:decoration-neutral-700 underline-offset-8 decoration-2 uppercase tracking-tight">
+      Navigation
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
       {navItems.map(item => (
         <NavigationCard
           href={item.href}

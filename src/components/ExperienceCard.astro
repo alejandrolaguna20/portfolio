@@ -11,15 +11,28 @@ export interface Props {
 const { title, company, period, location, achievements, technologies } = Astro.props;
 ---
 
-<div class="p-4 bg-neutral-50 dark:bg-neutral-800 rounded-2xl border border-neutral-200 dark:border-neutral-700 mx-14">
-  <h3 class="text-xl font-semibold text-neutral-900 dark:text-neutral-100">{title}</h3>
-  <p class="text-sm text-neutral-600 dark:text-neutral-400">{company}, {period}, {location}</p>
-  <ul class="list-disc list-inside text-sm text-neutral-700 dark:text-neutral-300 mt-2 space-y-1">
+<div class="group relative p-5 bg-white dark:bg-neutral-900 rounded-xl border-2 border-neutral-200 dark:border-neutral-800 group-hover:border-blue-500 dark:group-hover:border-blue-400 shadow-sm hover:shadow-md transition-all duration-300">
+  <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+    <h3 class="text-lg font-bold text-blue-600 dark:text-blue-400 font-serif tracking-tight">{title}</h3>
+    <span class="text-[10px] font-mono font-bold text-blue-500 dark:text-blue-400 uppercase tracking-widest bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded border border-neutral-200 dark:border-neutral-700">{period}</span>
+  </div>
+  <p class="text-sm font-semibold text-neutral-600 dark:text-neutral-400 mb-3 flex items-center gap-2">
+    {company} 
+    <span class="w-1 h-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></span> 
+    <span class="font-normal font-serif text-neutral-600 dark:text-neutral-400">{location}</span>
+  </p>
+  <ul class="space-y-1.5 mb-4">
     {achievements.map(achievement => (
-      <li>{achievement}</li>
+      <li class="flex gap-2.5 text-sm font-medium text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <span class="text-blue-500 dark:text-blue-400 font-serif font-bold">›</span>
+        <span>{achievement}</span>
+      </li>
     ))}
   </ul>
-  <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2">
-    {technologies}
-  </p>
+  <div class="pt-3 border-t border-neutral-100 dark:border-neutral-800">
+    <p class="text-[10px] font-mono font-medium text-neutral-500 dark:text-neutral-500 uppercase tracking-widest leading-relaxed">
+      <span class="font-bold mr-2 text-neutral-400 dark:text-neutral-600">Technical Stack: </span>
+      <span class="text-neutral-700 dark:text-neutral-300 font-serif normal-case tracking-normal text-sm font-bold">{technologies}</span>
+    </p>
+  </div>
 </div>

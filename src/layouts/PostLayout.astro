@@ -1,17 +1,80 @@
 ---
 import Layout from "./Layout.astro"
+import { Image } from 'astro:assets';
+import { ArrowLeft } from 'lucide-astro';
 
 export interface Props {
   title: string,
-  description: string,
+  description?: string,
   pubDate: Date,
+  heroImage?: any,
+  tags?: string[],
 }
 
-const {title, description, pubDate} = Astro.props;
+const { title, description, pubDate, heroImage, tags } = Astro.props;
+const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
 ---
 
 <Layout>
-  <main class="post text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed text-justify">
-  <slot />
-  </main>
+  <div class="max-w-3xl mx-auto">
+    <!-- Navigation -->
+    <nav class="mb-12">
+      <a href="/log" class="inline-flex items-center gap-2 text-sm font-serif italic font-bold text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
+        <ArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+        Back to the log
+      </a>
+    </nav>
+
+    <article class="relative">
+      <!-- Post Header -->
+      <header class="mb-12">
+        <div class="mb-6">
+          <time class="text-sm font-mono font-bold text-neutral-500 dark:text-neutral-400 uppercase tracking-widest bg-neutral-100 dark:bg-neutral-800/50 px-2 py-0.5 rounded border border-neutral-200 dark:border-neutral-700">
+            {formattedDate}
+          </time>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-neutral-100 font-serif tracking-tight leading-tight mb-8">
+          {title}
+        </h1>
+
+        {description && (
+          <p class="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 font-serif italic leading-relaxed border-l-4 border-blue-500 dark:border-blue-400 pl-6 mb-10 font-medium">
+            {description}
+          </p>
+        )}
+      </header>
+
+      {heroImage && (
+        <div class="mb-16 rounded-xl overflow-hidden border-2 border-neutral-200 dark:border-neutral-800 shadow-sm">
+          <Image src={heroImage} alt={title} class="w-full aspect-video object-cover grayscale opacity-90" />
+        </div>
+      )}
+
+      <!-- Post Content -->
+      <div class="post prose prose-neutral dark:prose-invert max-w-none font-serif text-base sm:text-lg leading-relaxed text-neutral-800 dark:text-neutral-200 text-justify">
+        <slot />
+      </div>
+
+      <!-- Post Footer -->
+      <footer class="mt-24 pt-8 border-t border-neutral-100 dark:border-neutral-800">
+        {tags && (
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span class="text-[10px] font-mono font-bold text-neutral-400 dark:text-neutral-500 uppercase tracking-[0.2em]">Tags</span>
+            <div class="flex flex-wrap gap-2">
+              {tags.map(tag => (
+                <span class="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest bg-neutral-50 dark:bg-neutral-800/50 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+      </footer>
+    </article>
+  </div>
 </Layout>
