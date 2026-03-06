@@ -8,10 +8,12 @@ export interface Props {
   description?: string,
   pubDate: Date,
   heroImage?: any,
+  heroImageCredit?: string,
   tags?: string[],
+  collection?: 'log' | 'workshop' | 'library',
 }
 
-const { title, description, pubDate, heroImage, tags } = Astro.props;
+const { title, description, pubDate, heroImage, heroImageCredit, tags, collection = 'log' } = Astro.props;
 const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -23,9 +25,9 @@ const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
   <div class="max-w-3xl mx-auto">
     <!-- Navigation -->
     <nav class="mb-12">
-      <a href="/log" class="inline-flex items-center gap-2 text-sm font-serif italic font-bold text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
+      <a href={`/${collection}`} class="inline-flex items-center gap-2 text-sm font-serif italic font-bold text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
         <ArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-        Back to the log
+        Back to the {collection}
       </a>
     </nav>
 
@@ -38,22 +40,39 @@ const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
           </time>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-neutral-100 font-serif tracking-tight leading-tight mb-8">
-          {title}
-        </h1>
+        <div class="flex flex-col md:flex-row gap-8 mb-10">
+          <div class="flex-1">
+            <h1 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-neutral-100 font-serif tracking-tight leading-tight mb-6">
+              {title}
+            </h1>
 
-        {description && (
-          <p class="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 font-serif italic leading-relaxed border-l-4 border-blue-500 dark:border-blue-400 pl-6 mb-10 font-medium">
-            {description}
-          </p>
-        )}
-      </header>
+            {description && (
+              <p class="text-lg sm:text-xl text-neutral-700 dark:text-neutral-300 font-serif italic leading-relaxed border-l-4 border-blue-500 dark:border-blue-400 pl-6 font-medium">
+                {description}
+              </p>
+            )}
+          </div>
 
-      {heroImage && (
-        <div class="mb-16 rounded-xl overflow-hidden border-2 border-neutral-200 dark:border-neutral-800 shadow-sm">
-          <Image src={heroImage} alt={title} class="w-full aspect-video object-cover grayscale opacity-90" />
+          {heroImage && (
+            <div class="w-full md:w-56 shrink-0">
+              <div class="relative group rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-sm transition-all duration-300">
+                <Image 
+                  src={heroImage} 
+                  alt={title} 
+                  class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
+                />
+                {heroImageCredit && (
+                  <div class="absolute inset-x-0 bottom-0 bg-neutral-900/80 backdrop-blur-sm p-2 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                    <p class="text-[9px] font-mono text-white uppercase tracking-wider text-center leading-none">
+                      {heroImageCredit}
+                    </p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </header>
 
       <!-- Post Content -->
       <div class="post prose prose-neutral dark:prose-invert max-w-none font-serif text-base sm:text-lg leading-relaxed text-neutral-800 dark:text-neutral-200 text-justify">

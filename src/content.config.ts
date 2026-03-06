@@ -10,6 +10,7 @@ const workshop = defineCollection({
             pubDate: z.coerce.date(),
             updatedDate: z.coerce.date().optional(),
             heroImage: image().optional(),
+            heroImageCredit: z.string().optional(),
             tags: z.array(z.string()).optional(),
             private: z.boolean().optional()
         }),
@@ -24,6 +25,7 @@ const log = defineCollection({
             pubDate: z.coerce.date(),
             updatedDate: z.coerce.date().optional(),
             heroImage: image().optional(),
+            heroImageCredit: z.string().optional(),
             tags: z.array(z.string()).optional(),
             private: z.boolean().optional()
         }),
@@ -38,6 +40,7 @@ const library = defineCollection({
             pubDate: z.coerce.date(),
             updatedDate: z.coerce.date().optional(),
             heroImage: image().optional(),
+            heroImageCredit: z.string().optional(),
             tags: z.array(z.string()).optional(),
             private: z.boolean().optional()
         }),

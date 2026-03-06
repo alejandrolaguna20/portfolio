@@ -15,6 +15,6 @@ const post = Astro.props;
 const { Content } = await render(post);
 ---
 
-<PostLayout {...post.data}>
+<PostLayout {...post.data} collection="workshop">
 	<Content />
 </PostLayout>

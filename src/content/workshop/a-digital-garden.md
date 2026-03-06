@@ -4,6 +4,7 @@ description: "A reflection on the web revival, the beauty of building things for
 pubDate: '2026-03-05'
 tags: ['web-revival', 'digital-garden', 'philosophy', 'small-web']
 heroImage: "../images/garden.png"
+heroImageCredit: "Roelof Stephen Rossouw"
 private: false
 ---
 
