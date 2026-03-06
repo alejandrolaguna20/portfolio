@@ -1,6 +1,6 @@
 ---
 import Layout from "./Layout.astro"
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import { ArrowLeft } from 'lucide-astro';
 
 export interface Props {
@@ -56,9 +56,14 @@ const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
           {heroImage && (
             <div class="w-full md:w-56 shrink-0">
               <div class="relative group rounded-xl overflow-hidden border border-neutral-200 dark:border-neutral-800 shadow-sm transition-all duration-300">
-                <Image 
+                <Picture 
                   src={heroImage} 
                   alt={title} 
+                  formats={['avif', 'webp']}
+                  widths={[224, 448]}
+                  sizes="(min-width: 768px) 224px, 100vw"
+                  loading="eager"
+                  fetchpriority="high"
                   class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
                 />
                 {heroImageCredit && (
