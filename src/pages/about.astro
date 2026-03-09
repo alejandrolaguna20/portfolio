@@ -3,26 +3,26 @@ import "../styles/global.css"
 import Layout from "../layouts/Layout.astro"
 import NavigationCard from "../components/NavigationCard.astro"
 import ExperienceCard from '../components/ExperienceCard.astro';
-import { PencilRuler, LibraryBig, ScrollText, GraduationCap, Wrench, Feather, Briefcase, Mail, Github, Linkedin, ExternalLink, Fingerprint } from 'lucide-astro';
+import { PencilRuler, LibraryBig, ScrollText, Mail, Github, Linkedin, Fingerprint } from 'lucide-astro';
 
 const navItems = [
   {
     href: "/workshop", 
     icon: PencilRuler,
     heading: "Workshop",
-    content: "Technical implementations. Building high-performance systems to bridge theory and practice."
+    content: "The bench. A space for projects, experiments, and creative implementations across any medium."
   },
   {
     href: "/library",
     icon: LibraryBig, 
     heading: "Library",
-    content: "Foundational resources. A curated index of papers, books, and systems research."
+    content: "Foundational resources. A curated archive of research."
   },
   {
     href: "/log",
     icon: ScrollText,
     heading: "Log", 
-    content: "Chronicles of growth. Documenting the iterative refinement of code and character."
+    content: "Chronicles of progress. Documenting the iterative process of learning and growth in all pursuits."
   }
 ];
 
@@ -33,52 +33,17 @@ const navItems = [
 <section class="max-w-3xl mb-10 sm:mb-14">
   <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-neutral-900 dark:text-neutral-100 font-serif tracking-tight">About</h1>
   <p class="text-lg sm:text-xl text-neutral-800 dark:text-neutral-100 leading-snug text-justify font-serif font-bold">
-      I am a Software Engineer, and Computer Science student at the <a class="underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors decoration-2 underline-offset-4" href="https://www.epitech.eu/">European Institute of Technology (EPITECH)</a>.
+      I am a Software Engineer and student at <a class="underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors decoration-2 underline-offset-4" href="https://www.epitech.eu/">Epitech</a> Barcelona.
     </p>
 
   <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify font-serif mt-4 font-medium">
-    My current engineering focus is centered on <b>Systems Engineering</b>. I architect software that demands deterministic performance, manual memory safety, and a rigorous interface between computational logic and the physical world.
-  </p>
-
-  <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify font-serif mt-4 font-medium">
-    This specialization is built upon a professional foundation of shipping robust, high-stakes production systems. My background in full-stack architecture is defined by clean execution and a track record of reliability, supported by solid industry references.
+    My current focus is <b>Systems Programming</b>. I architect software that demands performance and a rigorous interface between computational logic and the physical world. This specialization is built upon a professional foundation of shipping production systems and a track record of technical reliability.
   </p>
 </section>
 
-  <!-- Education Section -->
-  <section class="mb-12 bg-white dark:bg-neutral-900 p-6 sm:p-8 rounded-xl border-2 border-neutral-200 dark:border-neutral-800 shadow-sm relative overflow-hidden group">
-    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif relative z-10 underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2">
-       Education
-    </h2>
-    <div class="relative z-10">
-      <ul class="space-y-10 font-serif">
-        <li class="relative pl-8 border-l-2 border-blue-500 dark:border-blue-400">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-             <p class="text-lg text-neutral-900 dark:text-neutral-100 font-bold tracking-tight">European Institute of Technology (EPITECH)</p>
-             <span class="text-[10px] text-neutral-500 dark:text-neutral-400 font-mono font-bold tracking-widest uppercase bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded border border-neutral-200 dark:border-neutral-700">2024 - 2029</span>
-          </div>
-          <p class="text-base text-neutral-700 dark:text-neutral-300 font-semibold leading-tight">Bachelor + Master's Degree in Computer Science</p>
-          <div class="flex items-center gap-4 mt-3">
-            <p class="text-sm text-neutral-500 dark:text-neutral-400 italic">Barcelona, Spain</p>
-            <span class="italic text-blue-500 dark:text-blue-400 font-bold decoration-blue-500/75 dark:decoration-blue-400/75 underline underline-offset-4 transform -rotate-1 inline-block">GPA: 3.34</span>
-          </div>
-        </li>
-
-        <li class="relative pl-8 border-l-2 border-neutral-200 dark:border-neutral-800">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-              <p class="text-lg text-neutral-900 dark:text-neutral-100 font-bold tracking-tight">INS Cendrassos</p>
-              <span class="text-[10px] text-neutral-500 dark:text-neutral-400 font-mono font-bold tracking-widest uppercase bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded border border-neutral-200 dark:border-neutral-700">2022 - 2024</span>
-          </div>
-          <p class="text-base text-neutral-700 dark:text-neutral-300 font-semibold leading-tight">Systems & Networking (Medium Degree)</p>
-          <p class="text-sm text-neutral-500 dark:text-neutral-400 italic mt-2 font-bold">Erasmus+ Scholarship • Student of the Year</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <!-- Experience Section -->
   <section class="mb-12">
-    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2">
+    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2 uppercase tracking-tight">
        Experience
     </h2>
     <div class="grid sm:grid-cols-1 gap-6">
@@ -118,11 +83,40 @@ const navItems = [
     </div>
   </section>
 
-  <!-- Technical Arsenal Section -->
-<section class="mb-12 bg-white dark:bg-neutral-900 p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-sm relative font-serif">
-  
+  <!-- Education Section -->
+  <section class="mb-12 bg-white dark:bg-neutral-900 p-6 sm:p-8 rounded-xl border-2 border-neutral-200 dark:border-neutral-800 shadow-sm relative overflow-hidden group">
+    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif relative z-10 underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2 uppercase tracking-tight">
+       Education
+    </h2>
+    <div class="relative z-10">
+      <ul class="space-y-10 font-serif">
+        <li class="relative pl-8 border-l-2 border-blue-500 dark:border-blue-400">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+             <p class="text-lg text-neutral-900 dark:text-neutral-100 font-bold tracking-tight">European Institute of Technology (EPITECH)</p>
+             <span class="text-[10px] text-neutral-500 dark:text-neutral-400 font-mono font-bold tracking-widest uppercase bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded border border-neutral-200 dark:border-neutral-700">2024 - 2029</span>
+          </div>
+          <p class="text-base text-neutral-700 dark:text-neutral-300 font-semibold leading-tight">Bachelor + Master's Degree in Computer Science</p>
+          <div class="flex items-center gap-4 mt-3">
+            <p class="text-sm text-neutral-500 dark:text-neutral-400 italic">Barcelona, Spain</p>
+          </div>
+        </li>
+
+        <li class="relative pl-8 border-l-2 border-neutral-200 dark:border-neutral-800">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
+              <p class="text-lg text-neutral-900 dark:text-neutral-100 font-bold tracking-tight">INS Cendrassos</p>
+              <span class="text-[10px] text-neutral-500 dark:text-neutral-400 font-mono font-bold tracking-widest uppercase bg-neutral-50 dark:bg-neutral-800 px-2 py-0.5 rounded border border-neutral-200 dark:border-neutral-700">2022 - 2024</span>
+          </div>
+          <p class="text-base text-neutral-700 dark:text-neutral-300 font-semibold leading-tight">Systems & Networking (Medium Degree)</p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 italic mt-2 font-bold">Erasmus+ Scholarship • Student of the Year</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Technical Focus Section -->
+  <section class="mb-12 bg-white dark:bg-neutral-900 p-8 rounded-xl border-2 border-neutral-200 dark:border-neutral-800 shadow-sm relative font-serif">
       <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2 uppercase tracking-tight">
-      Technical Stack - Active Inventory
+      Technical Arsenal
     </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     
@@ -144,9 +138,9 @@ const navItems = [
 
     <div class="p-6 rounded-lg bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
       <h3 class="text-[12px] font-bold text-blue-500 dark:text-blue-400 uppercase tracking-widest mb-3">Numerical & Functional</h3>
-      <p class="text-lg text-neutral-900 dark:text-neutral-100 font-bold font-mono tracking-tighter mb-2">Julia • Haskell • Typst</p>
+      <p class="text-lg text-neutral-900 dark:text-neutral-100 font-bold font-mono tracking-tighter mb-2">Haskell • Typst</p>
       <p class="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-        Exploring numerical computing for astrophysical simulations and functional paradigms for symbolic logic.
+        Exploring functional paradigms for symbolic logic and typesetting systems for technical documentation.
       </p>
     </div>
 
@@ -157,7 +151,6 @@ const navItems = [
         Minimalist, terminal-centric development environment optimized for deep work and process-level debugging.
       </p>
     </div>
-
   </div>
 
   <div class="mt-12 pt-6 border-t border-neutral-100 dark:border-neutral-800">
@@ -166,36 +159,27 @@ const navItems = [
       TS/JS • Python • NextJS • Astro • PHP • Laravel • MongoDB
     </p>
   </div>
-</section>  <!-- Beyond the Machine Section -->
+</section>
+
+  <!-- Beyond the Machine Section -->
 <section class="mb-16 bg-neutral-50 dark:bg-neutral-800/40 p-6 sm:p-8 rounded-xl border-2 border-neutral-200 dark:border-neutral-800 shadow-sm relative overflow-hidden group">
     <div class="absolute top-0 right-0 p-6 opacity-5 dark:opacity-[0.03] pointer-events-none transition-transform group-hover:scale-110 duration-700">
         <Fingerprint class="w-32 h-32 text-neutral-900 dark:text-neutral-100" />
     </div>
 
     <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif relative z-10 underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2 uppercase tracking-tight">
-        Beyond the Machine
+        Beyond the Terminal
     </h2>
 
     <div class="relative z-10 font-serif">
-      <p class="text-blue-500 dark:text-blue-400 leading-relaxed font-serif text-xs mb-6 font-bold uppercase tracking-widest border-b border-neutral-200 dark:border-neutral-800 pb-2">
-        Operational Discipline
-      </p>
-      
-      <p class="text-lg text-neutral-800 dark:text-neutral-200 leading-relaxed mb-10 font-medium italic">
-        "I believe that building resilience outside the terminal directly correlates with the quality of the systems engineered within it."
-      </p>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="space-y-3">
           <h3 class="text-base font-bold text-neutral-900 dark:text-neutral-100 mb-2 flex items-center gap-2">
               <span class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400"></span>
               Physical Foundation
           </h3>
-          <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm font-bold">
-            06:00 AM Pool Sessions.
-          </p>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed font-medium">
-            High-intensity sprint swimming as a tool for building the aerobic and mental capacity required for deep, focused engineering.
+            Morning pool sessions. High-intensity sprint swimming as a tool for aerobic capacity and mental focus.
           </p>
         </div>
 
@@ -204,11 +188,8 @@ const navItems = [
               <span class="w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400"></span>
               Intellectual Curiosity
           </h3>
-          <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed text-sm font-bold">
-            Astronomy & Philosophical Mapping.
-          </p>
           <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed font-medium text-pretty">
-            Integrating insights from Sagan and Dostoevsky. Currently exploring <b>astrophysics</b> to better understand the physical constraints of the systems I build.
+            I’m fascinated by Astrophysics and Astronomy. Currently exploring the physical constraints of the universe to better understand the constraints of the systems I build.
           </p>
         </div>
       </div>
@@ -217,7 +198,7 @@ const navItems = [
 
   <!-- Contact Section -->
   <section class="mb-16">
-    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2">
+    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2 uppercase tracking-tight">
       Contact
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -258,7 +239,7 @@ const navItems = [
       </div>
 <div class="p-10 border-2 border-dashed border-neutral-200 dark:border-neutral-800 rounded-xl bg-neutral-50/50 dark:bg-neutral-900/10 flex flex-col items-center justify-center text-center font-serif group">
     <p class="text-xl sm:text-2xl text-neutral-800 dark:text-neutral-200 font-bold leading-tight tracking-tight max-w-xl">
-        "I am just getting started. I'm hungry to learn how the most demanding systems work and how code can eventually help us understand the stars."
+        "I'm hungry to learn how code can eventually help us understand the stars."
     </p>
 </div>
     </div>
@@ -266,7 +247,7 @@ const navItems = [
 
   <!-- Navigation -->
   <section class="mb-20 sm:mb-28 mt-20" aria-labelledby="navigation-heading">
-    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-10 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2">
+    <h2 class="flex items-center gap-2 text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-10 font-serif underline decoration-blue-300/50 dark:decoration-blue-700/50 underline-offset-8 decoration-2 uppercase tracking-tight">
       Navigation
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-6">

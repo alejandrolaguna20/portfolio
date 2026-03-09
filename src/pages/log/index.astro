@@ -3,7 +3,7 @@ import "../../styles/global.css"
 import Layout from "../../layouts/Layout.astro"
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import { Fingerprint } from 'lucide-astro';
+import { ScrollText } from 'lucide-astro';
 
 const posts = (await getCollection('log'))
   .filter(post => !post.data.private)
@@ -15,16 +15,19 @@ const posts = (await getCollection('log'))
 <Layout>
   <!-- Page Header -->
   <section class="max-w-3xl mb-16 sm:mb-24">
-    <h1 class="text-4xl sm:text-5xl font-bold mb-8 text-neutral-900 dark:text-neutral-100 font-serif tracking-tight">
-      Technical <span class="text-blue-500 dark:text-blue-400 italic decoration-blue-500/75 dark:decoration-blue-400/75 underline underline-offset-8">Log</span>
-    </h1>
+    <div class="flex items-center gap-4 mb-8">
+        <ScrollText class="w-10 h-10 text-neutral-400 dark:text-neutral-500" />
+        <h1 class="text-4xl sm:text-5xl font-bold text-neutral-900 dark:text-neutral-100 font-serif tracking-tight">
+          The <span class="text-blue-500 dark:text-blue-400 italic decoration-blue-500/75 dark:decoration-blue-400/75 underline underline-offset-8">Log</span>
+        </h1>
+    </div>
     
     <p class="text-lg sm:text-xl text-neutral-800 dark:text-neutral-100 leading-snug text-justify font-serif font-bold">
-      "Turning scattered effort into deliberate action."
+      "Chronicles of growth and progress."
     </p>
 
     <p class="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 leading-relaxed text-justify font-serif mt-4 font-medium">
-      A repository of iterative progress. Documentation of systems engineering research, implementation notes, and the evolution of technical character.
+      A record of iterative progress and reflections on varied interests. This is where I document the evolution of my thinking and the refinement of my practice over time.
     </p>
   </section>
 
@@ -70,7 +73,7 @@ const posts = (await getCollection('log'))
               <p class="text-[10px] font-mono font-medium text-neutral-500 dark:text-neutral-500 uppercase tracking-widest leading-relaxed">
                 <span class="font-bold mr-2 text-neutral-400 dark:text-neutral-600">Tags: </span>
                 <span class="text-neutral-700 dark:text-neutral-300 font-serif normal-case tracking-normal text-sm font-bold">
-                    {post.data.tags ? post.data.tags.join(' • ') : 'Technical Entry'}
+                    {post.data.tags ? post.data.tags.join(' • ') : 'Log Entry'}
                 </span>
               </p>
             </div>
